@@ -18,12 +18,13 @@
 
 /* Begin PBXFileReference section */
 		182DABF02152241700314955 /* Net Alert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Net Alert.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		182DABF32152241800314955 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		182DABF32152241800314955 /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		182DABF52152241800314955 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		182DABF72152241900314955 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		182DABFA2152241900314955 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		182DABFC2152241900314955 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		182DABFD2152241900314955 /* Net_Alert.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Net_Alert.entitlements; sourceTree = "<group>"; };
+		18A63EBA215B87E6006E9C93 /* Net Alert.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Net Alert.entitlements"; sourceTree = "<group>"; };
 		18B33204215266AA00F2C544 /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
 		18B33205215266AA00F2C544 /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/Mac/Reachability.framework; sourceTree = "<group>"; };
 		18B33206215266AA00F2C544 /* Defaults.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Defaults.framework; path = Carthage/Build/Mac/Defaults.framework; sourceTree = "<group>"; };
@@ -65,6 +66,7 @@
 		182DABF22152241700314955 /* Net Alert */ = {
 			isa = PBXGroup;
 			children = (
+				18A63EBA215B87E6006E9C93 /* Net Alert.entitlements */,
 				182DABF32152241800314955 /* AppDelegate.swift */,
 				182DABF52152241800314955 /* ViewController.swift */,
 				182DABF72152241900314955 /* Assets.xcassets */,
@@ -119,6 +121,11 @@
 				TargetAttributes = {
 					182DABEF2152241700314955 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -335,7 +342,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Net Alert/Net_Alert.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Net Alert/Net Alert.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -361,7 +368,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Net Alert/Net_Alert.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Net Alert/Net Alert.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;

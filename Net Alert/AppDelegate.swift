@@ -9,7 +9,10 @@ extension Defaults.Keys {
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    var launchAtLoginMenuItem = NSMenuItem()
+	
+		let REMOTE_URL: String = "http://www.appleiphonecell.com"
+	
+		var launchAtLoginMenuItem = NSMenuItem()
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
 
@@ -54,15 +57,38 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
     }
+	
+	func pingHost(_ fullURL: String) {
+		let url = URL(string: fullURL)
+		
+		let task = URLSession.shared.dataTask(with: url!) { _, response, error in
+			if error != nil {
+				DispatchQueue.main.async {
+					self.setStatusIcon(color: "yellow")
+				}
+			}
+			else {
+				if let httpResponse = response as? HTTPURLResponse {
+					if httpResponse.statusCode == 200 {
+						DispatchQueue.main.async {
+							self.setStatusIcon(color: "green")
+						}
+					}
+				}
+			}
+		}
+		
+		task.resume()
+	}
 
     func checkConnection() {
         reachability.whenReachable = { reachability in
             if reachability.connection == .wifi {
                 print("Reachable via WiFi")
-                self.setStatusIcon(color: "green")
+								self.pingHost(self.REMOTE_URL)
             } else {
                 print("Reachable via Cellular")
-                self.setStatusIcon(color: "yellow")
+								self.pingHost(self.REMOTE_URL)
             }
         }
         
@@ -75,7 +101,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             try reachability.startNotifier()
         } catch {
             print("Unable to start notifier")
-            self.setStatusIcon(color: "yellow")
+            self.setStatusIcon(color: "red")
         }
     }
 }

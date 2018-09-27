@@ -90,27 +90,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 				}
 				.resume()
 		}
-
-//		let url = URL(string: fullURL)
-//
-//		let task = URLSession.shared.dataTask(with: url!) { _, response, error in
-//			if error != nil {
-//				DispatchQueue.main.async {
-//					self.setStatusIcon(color: "yellow")
-//				}
-//			}
-//			else {
-//				if let httpResponse = response as? HTTPURLResponse {
-//					if httpResponse.statusCode == 200 {
-//						DispatchQueue.main.async {
-//							self.setStatusIcon(color: "green")
-//						}
-//					}
-//				}
-//			}
-//		}
-//
-//		task.resume()
 	}
 
     func checkConnection() {

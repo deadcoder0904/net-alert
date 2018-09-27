@@ -10,7 +10,7 @@ extension Defaults.Keys {
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 	
-		let REMOTE_URL: String = "http://www.appleiphonecell.com"
+		let REMOTE_URL: String = "https://www.apple.com"
 	
 		var launchAtLoginMenuItem = NSMenuItem()
     
@@ -59,26 +59,58 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 	
 	func pingHost(_ fullURL: String) {
-		let url = URL(string: fullURL)
-		
-		let task = URLSession.shared.dataTask(with: url!) { _, response, error in
-			if error != nil {
-				DispatchQueue.main.async {
-					self.setStatusIcon(color: "yellow")
-				}
-			}
-			else {
-				if let httpResponse = response as? HTTPURLResponse {
-					if httpResponse.statusCode == 200 {
+
+		if let url = URL(string: fullURL) {
+			var request = URLRequest(url: url)
+			request.httpMethod = "HEAD"
+
+			URLSession(configuration: .default)
+				.dataTask(with: request) { (_, response, error) in
+					guard error == nil else {
+						print("Error:", error ?? "")
 						DispatchQueue.main.async {
-							self.setStatusIcon(color: "green")
+							self.setStatusIcon(color: "red")
 						}
+						return
+					}
+
+					guard (response as? HTTPURLResponse)?
+						.statusCode == 200 else {
+							print("Offline")
+							DispatchQueue.main.async {
+								self.setStatusIcon(color: "red")
+							}
+							return
+					}
+
+					print("Online")
+					DispatchQueue.main.async {
+						self.setStatusIcon(color: "green")
 					}
 				}
-			}
+				.resume()
 		}
-		
-		task.resume()
+
+//		let url = URL(string: fullURL)
+//
+//		let task = URLSession.shared.dataTask(with: url!) { _, response, error in
+//			if error != nil {
+//				DispatchQueue.main.async {
+//					self.setStatusIcon(color: "yellow")
+//				}
+//			}
+//			else {
+//				if let httpResponse = response as? HTTPURLResponse {
+//					if httpResponse.statusCode == 200 {
+//						DispatchQueue.main.async {
+//							self.setStatusIcon(color: "green")
+//						}
+//					}
+//				}
+//			}
+//		}
+//
+//		task.resume()
 	}
 
     func checkConnection() {

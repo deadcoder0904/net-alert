@@ -10,7 +10,7 @@ extension Defaults.Keys {
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 	
-		let REMOTE_URL: String = "https://www.apple.com"
+		let REMOTE_URL: String = "https://www.apple12x.com"
 	
 		var launchAtLoginMenuItem = NSMenuItem()
     
@@ -69,7 +69,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 					guard error == nil else {
 						print("Error:", error ?? "")
 						DispatchQueue.main.async {
-							self.setStatusIcon(color: "red")
+							self.setStatusIcon(color: "yellow")
 						}
 						return
 					}

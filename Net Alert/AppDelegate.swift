@@ -10,7 +10,7 @@ extension Defaults.Keys {
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 	
-		let REMOTE_URL: String = "https://www.apple12x.com"
+		let REMOTE_URL: String = "https://www.apple.com"
 	
 		var launchAtLoginMenuItem = NSMenuItem()
     

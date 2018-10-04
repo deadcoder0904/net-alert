@@ -12,11 +12,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	let REMOTE_URL: String = "http://captive.apple.com"
 	
-	var launchAtLoginMenuItem = NSMenuItem()
+	var launchAtLoginMenuItem: NSMenuItem = NSMenuItem()
 	
-	let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+	let statusItem: NSStatusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
 
-	let reachability = Reachability()!
+	let reachability: Reachability = Reachability()!
 	
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		constructMenu()

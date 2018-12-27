@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1815183721D4866700A5A8D0 /* Defaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B33206215266AA00F2C544 /* Defaults.framework */; };
+		1815183821D4866700A5A8D0 /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B33204215266AA00F2C544 /* LaunchAtLogin.framework */; };
+		1815183921D4866700A5A8D0 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B33205215266AA00F2C544 /* Reachability.framework */; };
 		182DABF42152241800314955 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182DABF32152241800314955 /* AppDelegate.swift */; };
 		182DABF62152241800314955 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182DABF52152241800314955 /* ViewController.swift */; };
 		182DABF82152241900314955 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 182DABF72152241900314955 /* Assets.xcassets */; };
 		182DABFB2152241900314955 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 182DABF92152241900314955 /* Main.storyboard */; };
-		18B33207215266AA00F2C544 /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B33204215266AA00F2C544 /* LaunchAtLogin.framework */; };
-		18B33208215266AA00F2C544 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B33205215266AA00F2C544 /* Reachability.framework */; };
-		18B33209215266AA00F2C544 /* Defaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B33206215266AA00F2C544 /* Defaults.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,9 +35,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18B33207215266AA00F2C544 /* LaunchAtLogin.framework in Frameworks */,
-				18B33208215266AA00F2C544 /* Reachability.framework in Frameworks */,
-				18B33209215266AA00F2C544 /* Defaults.framework in Frameworks */,
+				1815183721D4866700A5A8D0 /* Defaults.framework in Frameworks */,
+				1815183821D4866700A5A8D0 /* LaunchAtLogin.framework in Frameworks */,
+				1815183921D4866700A5A8D0 /* Reachability.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
